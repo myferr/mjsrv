@@ -19,5 +19,8 @@
   "license": "MIT",
   "author": "myfer <https://github.com/myferr>",
   "type": "module",
-  "main": "index.js"
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^12.9.3"
+  }
 }
