@@ -1,0 +1,23 @@
+{
+  "name": "mc.js",
+  "version": "1.0.0",
+  "description": "JavaScript library and CLI to initalize Minecraft Java servers",
+  "keywords": [
+    "cli",
+    "library",
+    "mc",
+    "minecraft"
+  ],
+  "homepage": "https://github.com/myferr/mc.js#readme",
+  "bugs": {
+    "url": "https://github.com/myferr/mc.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myferr/mc.js.git"
+  },
+  "license": "MIT",
+  "author": "myfer <https://github.com/myferr>",
+  "type": "module",
+  "main": "index.js"
+}
