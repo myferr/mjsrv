@@ -1,5 +1,5 @@
 <div align="center">
-  
+
   # mjsrv
   ## Minecraft JS server
 
@@ -66,19 +66,21 @@ MinecraftServer.create({
 });
 ```
 
-#### `MinecraftServer.serve(id, port)`
+#### `MinecraftServer.serve(id, port, gui)`
 
 Starts a Minecraft server.
 
 - `id` (string): The ID of the server to start.
 - `port` (number): The port to start the server on. Defaults to `25565`.
+- `gui` (boolean): Whether to enable the MinecraftServer GUI. Defaults to `false`. To specify, first specify `port`.
 
-#### `MinecraftServer.start(id, port)`
+#### `MinecraftServer.start(id, port, gui)`
 
 Starts a Minecraft server.
 
 - `id` (string): The ID of the server to start.
 - `port` (number): The port to start the server on. Defaults to `25565`.
+- `gui` (boolean): Whether to enable the MinecraftServer GUI. Defaults to `false`. To specify, first specify `port`.
 
 #### `MinecraftServer.stop(id)`
 

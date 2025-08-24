@@ -47,7 +47,7 @@ hardcore=${hardcore}
     });
   }
 
-  static serve(id, port = 25565) {
+  static serve(id, port = 25565, gui = false) {
     const serverPath = `./${id}`;
     if (!existsSync(serverPath)) {
       console.error(`[mjsrv:error] Server with ID "${id}" not found.`);
@@ -61,7 +61,7 @@ server-port=${port}
       flag: "a",
     });
 
-    const command = `java -Xmx1024M -Xms1024M -jar server.jar nogui`;
+    const command = `java -Xmx1024M -Xms1024M -jar server.jar ${gui ? "" : "nogui"}`;
 
     console.log(`[mjsrv:server] Starting server "${id}" on port ${port}...`);
 
@@ -87,7 +87,7 @@ server-port=${port}
     exec("pkill java", (error, stdout, stderr) => {
       if (error) {
         console.error(
-          `[mjsrv:server:error] Failed to stop server: ${error.message}`
+          `[mjsrv:server:error] Failed to stop server: ${error.message}`,
         );
         return;
       }
@@ -95,7 +95,7 @@ server-port=${port}
     });
   }
 
-  static start(id, port = 25565) {
+  static start(id, port = 25565, gui = false) {
     const serverPath = `./${id}`;
     if (!existsSync(serverPath)) {
       console.error(`[mjsrv:error] Server with ID "${id}" not found.`);
@@ -109,7 +109,7 @@ server-port=${port}
       flag: "a",
     });
 
-    const command = `java -Xmx1024M -Xms1024M -jar server.jar nogui`;
+    const command = `java -Xmx1024M -Xms1024M -jar server.jar ${gui ? "" : "nogui"}`;
 
     console.log(`[mjsrv:server] Starting server "${id}" on port ${port}...`);
 
@@ -141,7 +141,7 @@ server-port=${port}
       exec(`rm -rf ${serverPath}`, (error, stdout, stderr) => {
         if (error) {
           console.error(
-            `[mjsrv:server:error] Failed to delete server: ${error.message}`
+            `[mjsrv:server:error] Failed to delete server: ${error.message}`,
           );
           return;
         }
