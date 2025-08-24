@@ -1,9 +1,8 @@
 {
   "name": "mc.js",
   "version": "1.0.0",
-  "description": "JavaScript library and CLI to initalize Minecraft Java servers",
+  "description": "JavaScript library to initalize Minecraft Java servers",
   "keywords": [
-    "cli",
     "library",
     "mc",
     "minecraft"

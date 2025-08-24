@@ -14,7 +14,7 @@ npm install mc.js
 import { MinecraftServer } from 'mc.js';
 
 MinecraftServer.create({
-  version: '1.21',
+  version: '1.21.6',
   motd: 'Welcome to my server!',
   id: 'my-server',
 });
@@ -48,7 +48,7 @@ Creates a new Minecraft server.
 import { MinecraftServer } from 'mc.js';
 
 MinecraftServer.create({
-  version: '1.21',
+  version: '1.21.6',
   motd: 'Welcome to my hardcore server!',
   id: 'my-hardcore-server',
   hardcore: true,
