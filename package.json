@@ -23,9 +23,6 @@
   "files": [
     "src"
   ],
-  "bin": {
-    "mc.js": "src/index.js"
-  },
   "scripts": {
     "start": "node src/index.js"
   },
