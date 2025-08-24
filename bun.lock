@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "mc.js",
+      "name": "mjsrv",
       "dependencies": {
         "child_process": "^1.0.2",
         "crypto": "^1.0.1",

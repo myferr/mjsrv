@@ -16,13 +16,13 @@ export class MinecraftServer {
   }) {
     return new Promise((resolve, reject) => {
       if (!motd) {
-        console.error("[mc.js:error] MOTD is required.");
+        console.error("[mjsrv:error] MOTD is required.");
         return reject(new Error("MOTD is required."));
       }
 
       const serverPath = `./${id}`;
       if (existsSync(serverPath)) {
-        console.error(`[mc.js:error] Server with ID "${id}" already exists.`);
+        console.error(`[mjsrv:error] Server with ID "${id}" already exists.`);
         return reject(new Error(`Server with ID "${id}" already exists.`));
       }
 
@@ -40,7 +40,7 @@ hardcore=${hardcore}
 `;
           writeFileSync(`${serverPath}/server.properties`, propertiesContent);
 
-          console.log(`[mc.js:server] Created server "${id}" at ${serverPath}`);
+          console.log(`[mjsrv:server] Created server "${id}" at ${serverPath}`);
           resolve();
         })
         .catch(reject);
@@ -50,7 +50,7 @@ hardcore=${hardcore}
   static serve(id, port = 25565) {
     const serverPath = `./${id}`;
     if (!existsSync(serverPath)) {
-      console.error(`[mc.js:error] Server with ID "${id}" not found.`);
+      console.error(`[mjsrv:error] Server with ID "${id}" not found.`);
       return;
     }
 
@@ -63,42 +63,42 @@ server-port=${port}
 
     const command = `java -Xmx1024M -Xms1024M -jar server.jar nogui`;
 
-    console.log(`[mc.js:server] Starting server "${id}" on port ${port}...`);
+    console.log(`[mjsrv:server] Starting server "${id}" on port ${port}...`);
 
     const serverProcess = exec(command, { cwd: serverPath });
 
     serverProcess.stdout.on("data", (data) => {
-      console.log(`[mc.js:server:logs] ${data}`);
+      console.log(`[mjsrv:server:logs] ${data}`);
     });
 
     serverProcess.stderr.on("data", (data) => {
-      console.error(`[mc.js:server:error] ${data}`);
+      console.error(`[mjsrv:server:error] ${data}`);
     });
 
     serverProcess.on("close", (code) => {
-      console.log(`[mc.js:server] Server process exited with code ${code}`);
+      console.log(`[mjsrv:server] Server process exited with code ${code}`);
     });
   }
 
   static stop(id) {
-    console.log(`[mc.js:server] Stopping server "${id}"...`);
+    console.log(`[mjsrv:server] Stopping server "${id}"...`);
     // This is a temporary solution and needs to be improved.
     // It tries to kill all java processes, which is not ideal.
     exec("pkill java", (error, stdout, stderr) => {
       if (error) {
         console.error(
-          `[mc.js:server:error] Failed to stop server: ${error.message}`,
+          `[mjsrv:server:error] Failed to stop server: ${error.message}`
         );
         return;
       }
-      console.log(`[mc.js:server] Server "${id}" stopped.`);
+      console.log(`[mjsrv:server] Server "${id}" stopped.`);
     });
   }
 
   static start(id, port = 25565) {
     const serverPath = `./${id}`;
     if (!existsSync(serverPath)) {
-      console.error(`[mc.js:error] Server with ID "${id}" not found.`);
+      console.error(`[mjsrv:error] Server with ID "${id}" not found.`);
       return;
     }
 
@@ -111,44 +111,44 @@ server-port=${port}
 
     const command = `java -Xmx1024M -Xms1024M -jar server.jar nogui`;
 
-    console.log(`[mc.js:server] Starting server "${id}" on port ${port}...`);
+    console.log(`[mjsrv:server] Starting server "${id}" on port ${port}...`);
 
     const serverProcess = exec(command, { cwd: serverPath });
 
     serverProcess.stdout.on("data", (data) => {
-      console.log(`[mc.js:server:logs] ${data}`);
+      console.log(`[mjsrv:server:logs] ${data}`);
     });
 
     serverProcess.stderr.on("data", (data) => {
-      console.error(`[mc.js:server:error] ${data}`);
+      console.error(`[mjsrv:server:error] ${data}`);
     });
 
     serverProcess.on("close", (code) => {
-      console.log(`[mc.js:server] Server process exited with code ${code}`);
+      console.log(`[mjsrv:server] Server process exited with code ${code}`);
     });
   }
 
   static restart(id) {
-    console.log(`[mc.js:server] Restarting server "${id}"...`);
+    console.log(`[mjsrv:server] Restarting server "${id}"...`);
     this.stop(id);
     this.start(id);
   }
 
   static delete(id) {
-    console.log(`[mc.js:server] Deleting server "${id}"...`);
+    console.log(`[mjsrv:server] Deleting server "${id}"...`);
     const serverPath = `./${id}`;
     if (existsSync(serverPath)) {
       exec(`rm -rf ${serverPath}`, (error, stdout, stderr) => {
         if (error) {
           console.error(
-            `[mc.js:server:error] Failed to delete server: ${error.message}`,
+            `[mjsrv:server:error] Failed to delete server: ${error.message}`
           );
           return;
         }
-        console.log(`[mc.js:server] Server "${id}" deleted.`);
+        console.log(`[mjsrv:server] Server "${id}" deleted.`);
       });
     } else {
-      console.error(`[mc.js:error] Server with ID "${id}" not found.`);
+      console.error(`[mjsrv:error] Server with ID "${id}" not found.`);
     }
   }
 

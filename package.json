@@ -1,5 +1,5 @@
 {
-  "name": "mc.js",
+  "name": "mjsrv",
   "version": "1.0.0",
   "description": "JavaScript library to initalize Minecraft Java servers",
   "keywords": [
@@ -7,13 +7,13 @@
     "mc",
     "minecraft"
   ],
-  "homepage": "https://github.com/myferr/mc.js#readme",
+  "homepage": "https://github.com/myferr/mjsrv#readme",
   "bugs": {
-    "url": "https://github.com/myferr/mc.js/issues"
+    "url": "https://github.com/myferr/mjsrv/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/myferr/mc.js.git"
+    "url": "git+https://github.com/myferr/mjsrv.git"
   },
   "license": "MIT",
   "author": "myfer <https://github.com/myferr>",
