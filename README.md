@@ -1,6 +1,17 @@
-# mjsrv
+<div align="center">
+  
+  # mjsrv
+  ## Minecraft JS server
 
-A JavaScript library for creating and managing Minecraft Java servers.
+[![NPM Version](https://img.shields.io/npm/v/mjsrv?color=blue&label=npm)](https://www.npmjs.com/package/mjsrv)
+[![License](https://img.shields.io/github/license/myferr/mjsrv?color=yellow)](https://github.com/myferr/mjsrv/blob/main/LICENSE)
+[![Made with Node.js](https://img.shields.io/badge/Made%20with-Node.js-43853D?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Minecraft Java](https://img.shields.io/badge/Minecraft-Java-62B47A?logo=minecraft&logoColor=white)](https://www.minecraft.net/)
+
+  A JavaScript library for creating and managing Minecraft Java servers.
+
+</div>
+
 
 ## Installation
 
